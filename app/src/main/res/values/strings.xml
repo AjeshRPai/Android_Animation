@@ -1,20 +1,21 @@
 <resources>
-    <string name="app_name">AndroidAnimatios</string>
+    <string name="app_name">AndroidAnimations</string>
 
-    <string name="translate_spring_animation">Translate Spring Animation</string>
-    <string name="translate_fling_animation">Translate Fling Animation</string>
-
-    <string name="translate_rotate_spring_animation">Translate &amp; Rotate Spring Animation</string>
-
-    <string name="chained_spring_animation">Chained Spring Animation</string>
     <string name="alarm_title" />
     <string name="alarm_title_transition">Alarm</string>
-    <string name="alarm_description">This is just a sameple of the alram transition</string>
+    <string name="alarm_description">This is just a sameple of the alarm transition</string>
+
     <string name="help_title">Help ?</string>
     <string name="help_desciption">Help is here when you need it. Please press the below button for contacting the emergency number</string>
     <string name="transition_activity">Transition Without Activity or Fragments</string>
+
+
     <string name="search_text">Get Searching!</string>
     <string name="search_description">Your bookmarks will show up here</string>
     <string name="search_view">Search...</string>
     <string name="card_transition">Card transition</string>
+    <string name="home_view_alarm_view_transition">HomeView to AlarmView</string>
+    <string name="alarm_to_mapview">Alarm to Map View</string>
+    <string name="search_view_transition">Search View transition</string>
+
 </resources>

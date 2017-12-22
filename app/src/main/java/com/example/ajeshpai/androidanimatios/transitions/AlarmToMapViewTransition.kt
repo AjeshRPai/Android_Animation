@@ -1,21 +1,20 @@
-package com.example.ajeshpai.androidanimatios.Transitions
+package com.example.ajeshpai.androidanimatios.transitions
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.constraint.ConstraintSet
-import android.support.v4.view.animation.FastOutLinearInInterpolator
 import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.transition.*
 import android.view.Gravity
 import android.view.View
 import com.example.ajeshpai.androidanimatios.R
-import kotlinx.android.synthetic.main.transitions_activity_first_view.*
+import kotlinx.android.synthetic.main.transitions_alarm_to_mapview.*
 
-class FirstViewActivity : AppCompatActivity() {
+class AlarmToMapViewTransition : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.transitions_activity_first_view)
+        setContentView(R.layout.transitions_alarm_to_mapview)
 
         val idleSet=ConstraintSet()
         val triggeredSet=ConstraintSet()
@@ -68,10 +67,5 @@ class FirstViewActivity : AppCompatActivity() {
             TransitionManager.beginDelayedTransition(first_container,transition)
             idleSet.applyTo(first_container)
         }
-
-
-
-
-
     }
 }

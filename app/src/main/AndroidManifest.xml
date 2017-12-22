@@ -9,27 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-        <activity android:name=".PhysicsBasedAnimations.SpringAnimationActivity" />
-        <activity android:name=".PhysicsBasedAnimations.FlingActivity" />
-        <activity android:name=".PhysicsBasedAnimations.TranslateAndRotateSpringAnimation" />
-        <activity android:name=".PhysicsBasedAnimations.ChainedSpringAnimationActivity" />
-        <activity android:name=".Transitions.FirstViewActivity" />
-        <activity
-            android:name=".Transitions.HomeView_AlarmViewSwitching"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
-        <activity android:name=".Transitions.SearchViewTransitionActivity">
+        <activity android:name=".IndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Transitions.Search_Activity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
+
+        <activity android:name=".transitions.AlarmToMapViewTransition"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <activity
+            android:name=".transitions.HomeView_AlarmViewSwitching"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <activity android:name=".transitions.SearchViewTransitionActivity"/>
+
+        <activity android:name=".transitions.Search_Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

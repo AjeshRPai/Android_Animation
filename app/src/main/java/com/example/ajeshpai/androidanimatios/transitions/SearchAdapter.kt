@@ -1,4 +1,4 @@
-package com.example.ajeshpai.androidanimatios.Transitions
+package com.example.ajeshpai.androidanimatios.transitions
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -20,7 +20,6 @@ class SearchAdapter(private val list: List<String>) : RecyclerView.Adapter<Searc
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
                 .inflate(R.layout.search_result_row, parent, false)
-
         return MyViewHolder(itemView)
     }
 

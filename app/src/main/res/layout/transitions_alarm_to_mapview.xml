@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/first_container"
-    tools:context="com.example.ajeshpai.androidanimatios.Transitions.FirstViewActivity">
+    tools:context="com.example.ajeshpai.androidanimatios.transitions.AlarmToMapViewTransition">
 
     <View
         android:layout_width="0dp"
