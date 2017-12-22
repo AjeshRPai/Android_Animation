@@ -7,6 +7,7 @@ import com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations.ChainedSprin
 import com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations.FlingActivity
 import com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations.SpringAnimationActivity
 import com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations.TranslateAndRotateSpringAnimation
+import com.example.ajeshpai.androidanimatios.Transitions.FirstViewActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
 
         btn_chained_spring.setOnClickListener {
             startActivity<ChainedSpringAnimationActivity>()
+        }
+
+        btn_translation.setOnClickListener {
+            startActivity<FirstViewActivity>()
         }
 
 
