@@ -11,8 +11,6 @@ import android.support.v4.view.ViewCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.content.Intent
 
-
-
 class SearchViewTransitionActivity : AppCompatActivity() {
 
     private val view by lazy {

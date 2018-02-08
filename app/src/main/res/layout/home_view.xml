@@ -8,55 +8,44 @@
     android:id="@+id/home_view"
     app:layout_anchorGravity="bottom|right">
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/homeview_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        >
-
+        android:background="#00ABE5"
+        android:transitionGroup="false">
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
             android:text="Home Screen"
-            android:textColor="@android:color/background_light"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.026"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="#AAFFFFFF"
+            android:textSize="28sp"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <android.support.design.widget.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#F2F2F2"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-
-            android:background="@android:color/background_light"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:layout_marginBottom="50dp"
-        android:layout_gravity="center|bottom"
-
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#FF0000"
         android:transitionName="fab_button"
-        app:srcCompat="@drawable/ic_add_white_24dp"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="156dp" />
+        app:borderWidth="0dp"
+        app:elevation="12dp" />
+
+
+
 
 </FrameLayout>

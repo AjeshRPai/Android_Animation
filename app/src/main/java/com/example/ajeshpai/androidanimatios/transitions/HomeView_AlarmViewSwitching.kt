@@ -53,11 +53,13 @@ class HomeView_AlarmViewSwitching : AppCompatActivity() {
         val transition=TransitionSet()
                 .addTransition(Slide(Gravity.BOTTOM)
                         .addTarget(content_container)
+                        .setDuration(500)
                         .setInterpolator(LinearOutSlowInInterpolator())
                 )
                 .addTransition(ChangeBounds()
                         .addTarget(homeview_fab)
                         .addTarget(alarmview_fab)
+                        .setDuration(500)
                 )
 
         val back_transition=TransitionSet()
@@ -66,8 +68,8 @@ class HomeView_AlarmViewSwitching : AppCompatActivity() {
                         .setInterpolator(LinearOutSlowInInterpolator())
                 )
                 .addTransition(ChangeBounds()
-                        .addTarget(homeview_fab)
                         .addTarget(alarmview_fab)
+                        .addTarget(homeview_fab)
                 )
 
         homeview_fab.setOnClickListener {
@@ -81,8 +83,10 @@ class HomeView_AlarmViewSwitching : AppCompatActivity() {
 
         alarmview_fab.setOnClickListener {
             TransitionManager.beginDelayedTransition(viewgroup,back_transition)
-            home_view.addView(homeview_fab)
             viewgroup.removeAllViews()
+            home_view.addView(homeview_fab)
+            if (homeview.getParent() != null)
+                (homeview.getParent() as ViewGroup).removeView(homeview)
             viewgroup.addView(homeview)
         }
 
