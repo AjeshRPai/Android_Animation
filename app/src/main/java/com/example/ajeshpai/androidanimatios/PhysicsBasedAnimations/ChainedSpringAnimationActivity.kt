@@ -1,13 +1,12 @@
 package com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations
 
 import android.annotation.SuppressLint
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.animation.DynamicAnimation
-import android.support.animation.SpringAnimation
 import android.view.MotionEvent
 import android.view.View
-import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.dynamicanimation.animation.DynamicAnimation
+import androidx.dynamicanimation.animation.SpringAnimation
 import com.example.ajeshpai.androidanimatios.R
 import kotlinx.android.synthetic.main.activity_chained_spring_animation.*
 

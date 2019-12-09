@@ -1,7 +1,7 @@
 package com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations
 
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.GestureDetector
 import android.view.MotionEvent

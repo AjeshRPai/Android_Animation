@@ -1,9 +1,9 @@
 package com.example.ajeshpai.androidanimatios.transitions
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.constraint.ConstraintSet
-import android.support.v4.view.animation.FastOutSlowInInterpolator
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import android.transition.*
 import android.view.Gravity
 import android.view.View
@@ -16,8 +16,8 @@ class AlarmToMapViewTransition : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.transitions_alarm_to_mapview)
 
-        val idleSet=ConstraintSet()
-        val triggeredSet=ConstraintSet()
+        val idleSet= ConstraintSet()
+        val triggeredSet= ConstraintSet()
 
         idleSet.clone(first_container)
         triggeredSet.clone(first_container)
@@ -47,7 +47,7 @@ class AlarmToMapViewTransition : AppCompatActivity() {
         triggeredSet.setVisibility(alarm_description.id,View.GONE)
         triggeredSet.setVisibility(white_background.id,View.VISIBLE)
 
-        triggeredSet.connect(R.id.white_background,ConstraintSet.BOTTOM,R.id.guideline2,ConstraintSet.TOP)
+        triggeredSet.connect(R.id.white_background, ConstraintSet.BOTTOM,R.id.guideline2, ConstraintSet.TOP)
 
 
         idleSet.setVisibility(help_title.id, View.GONE)

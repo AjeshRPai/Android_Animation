@@ -1,14 +1,14 @@
 package com.example.ajeshpai.androidanimatios.transitions
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.CardView
+import androidx.cardview.widget.CardView
 import android.transition.*
 import android.view.ViewGroup
 import com.example.ajeshpai.androidanimatios.R
 import kotlinx.android.synthetic.main.search_home_view.*
-import android.support.v4.view.ViewCompat
-import android.support.v4.app.ActivityOptionsCompat
+import androidx.core.view.ViewCompat
+import androidx.core.app.ActivityOptionsCompat
 import android.content.Intent
 
 class SearchViewTransitionActivity : AppCompatActivity() {
@@ -45,7 +45,7 @@ class SearchViewTransitionActivity : AppCompatActivity() {
             val intent = Intent(this@SearchViewTransitionActivity, Search_Activity::class.java)
             val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@SearchViewTransitionActivity,
                     searchview_card,
-                    ViewCompat.getTransitionName(searchview_card))
+                    ViewCompat.getTransitionName(searchview_card)!!)
             startActivity(intent, options.toBundle())
         }
     }

@@ -3,7 +3,7 @@ package com.example.ajeshpai.androidanimatios.transitions
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import com.example.ajeshpai.androidanimatios.R
 

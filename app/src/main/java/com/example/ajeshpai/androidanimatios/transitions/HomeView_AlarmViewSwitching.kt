@@ -1,10 +1,10 @@
 package com.example.ajeshpai.androidanimatios.transitions
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.design.widget.FloatingActionButton
-import android.support.v4.view.animation.LinearOutSlowInInterpolator
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import android.transition.*
 import android.view.Gravity
 import com.example.ajeshpai.androidanimatios.R
