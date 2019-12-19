@@ -2,6 +2,7 @@ package com.example.ajeshpai.androidanimatios
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.ajeshpai.androidanimatios.PathAnimations.PolygonPathAnimation
 import com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations.IndexPhysicsBasedActivity
 import com.example.ajeshpai.androidanimatios.WaveAnimation.WaveAnimationActivity
 import com.example.ajeshpai.androidanimatios.transitions.IndexTransitionActivity
@@ -16,9 +17,10 @@ class IndexActivity : AppCompatActivity() {
 
         button6.setOnClickListener { startActivity<WaveAnimationActivity>()}
 
-
         button4.setOnClickListener { startActivity<IndexPhysicsBasedActivity>() }
 
         button5.setOnClickListener { startActivity<IndexTransitionActivity>() }
+
+        button7.setOnClickListener { startActivity<PolygonPathAnimation>() }
     }
 }

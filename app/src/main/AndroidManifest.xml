@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning,InnerclassSeparator">
-        <activity android:name=".PathAnimations.PolygonPath"></activity>
+        <activity android:name=".PathAnimations.PolygonPathAnimation"/>
         <activity android:name=".WaveAnimation.WaveAnimationActivity" />
         <activity android:name=".IndexActivity">
             <intent-filter>

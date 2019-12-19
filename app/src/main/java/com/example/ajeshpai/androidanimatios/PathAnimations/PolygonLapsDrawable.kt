@@ -1,5 +1,7 @@
 package com.example.ajeshpai.androidanimatios.PathAnimations
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.graphics.*
 import android.graphics.Paint.ANTI_ALIAS_FLAG
 import android.graphics.Paint.Style.FILL
@@ -8,6 +10,7 @@ import android.graphics.PathDashPathEffect.Style.TRANSLATE
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.util.FloatProperty
+import android.view.animation.LinearInterpolator
 import androidx.annotation.RequiresApi
 import java.lang.Math.PI
 
@@ -29,6 +32,8 @@ class PolygonLapsDrawable : Drawable() {
             field = value.coerceIn(0f, 1f)
             callback?.invalidateDrawable(this)
         }
+
+
 
     private val polygons = listOf(
             Polygon(15, 0xffe84c65.toInt(), 362f, 2),
@@ -80,6 +85,8 @@ class PolygonLapsDrawable : Drawable() {
             dotPaint.pathEffect = PathDashPathEffect(pathDot, polygon.length, phase, TRANSLATE)
             canvas.drawPath(polygon.path, dotPaint)
         }
+
+
     }
 
     override fun setAlpha(alpha: Int) {
@@ -129,22 +136,6 @@ class PolygonLapsDrawable : Drawable() {
         private val pathMeasure = PathMeasure()
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
-    object PROGRESS : FloatProperty<PolygonLapsDrawable>("progress") {
-        override fun setValue(drawable: PolygonLapsDrawable, progress: Float) {
-            drawable.progress = progress
-        }
 
-        override fun get(drawable: PolygonLapsDrawable) = drawable.progress
-    }
-
-    @RequiresApi(Build.VERSION_CODES.N)
-    object DOT_PROGRESS : FloatProperty<PolygonLapsDrawable>("dotProgress") {
-        override fun setValue(drawable: PolygonLapsDrawable, dotProgress: Float) {
-            drawable.dotProgress = dotProgress
-        }
-
-        override fun get(drawable: PolygonLapsDrawable) = drawable.dotProgress
-    }
 
 }
