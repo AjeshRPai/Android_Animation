@@ -1,6 +1,7 @@
 package com.example.ajeshpai.androidanimatios.ShufflingCardView
 
 import android.content.Context
+import android.content.res.Resources
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.example.ajeshpai.androidanimatios.R
+
 
 private const val INDEX_OBSCURED = 0
 private const val INDEX_BACK = 1
@@ -38,6 +40,7 @@ class ShufflingCardsView(context: Context, attrs: AttributeSet?) : FrameLayout(c
         }
         resetZIndexToMatchCardOrder()
     }
+
 
     /**
      * z-index matches the order of the cardViews in the list
@@ -189,7 +192,7 @@ class ShufflingCardsView(context: Context, attrs: AttributeSet?) : FrameLayout(c
     }
 }
 
-internal class CardView(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {
+class CardView(context: Context, attrs: AttributeSet) : FrameLayout(context, attrs) {
 
     private var cardDesign: CardDesign? = null
 
@@ -224,6 +227,12 @@ internal class CardView(context: Context, attrs: AttributeSet) : FrameLayout(con
 }
 
 
-class CardDesign {
+
+sealed class CardDesign{
+   object PLUS_HOT_CORAL:CardDesign()
+   object PLUS_LAGOON_BLUE:CardDesign()
+   object PLUS_MIDNIGHT_SKY:CardDesign()
 
 }
+val Int.dp: Int
+    get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()

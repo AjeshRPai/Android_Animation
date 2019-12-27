@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.ajeshpai.androidanimatios.PathAnimations.PolygonPathAnimation
 import com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations.IndexPhysicsBasedActivity
+import com.example.ajeshpai.androidanimatios.ShufflingCardView.ShufflingCardsActivity
 import com.example.ajeshpai.androidanimatios.WaveAnimation.WaveAnimationActivity
 import com.example.ajeshpai.androidanimatios.transitions.IndexTransitionActivity
 import kotlinx.android.synthetic.main.activity_index2.*
@@ -22,5 +23,7 @@ class IndexActivity : AppCompatActivity() {
         button5.setOnClickListener { startActivity<IndexTransitionActivity>() }
 
         button7.setOnClickListener { startActivity<PolygonPathAnimation>() }
+
+        button8.setOnClickListener { startActivity<ShufflingCardsActivity>() }
     }
 }
