@@ -10,13 +10,17 @@ class ShufflingCardsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shuffling_cards)
-        val cardDesign = arrayListOf<CardDesign>(
+        val cardDesign = arrayListOf(
                 CardDesign.PLUS_HOT_CORAL,
                 CardDesign.PLUS_LAGOON_BLUE,
                 CardDesign.PLUS_MIDNIGHT_SKY
         )
         card_view.setCards(cardDesign)
         card_view.moveToFront(CardDesign.PLUS_MIDNIGHT_SKY)
+
+        button9.setOnClickListener { card_view.moveToFront(CardDesign.PLUS_HOT_CORAL) }
+        button10.setOnClickListener { card_view.moveToFront(CardDesign.PLUS_LAGOON_BLUE) }
+        button11.setOnClickListener { card_view.moveToFront(CardDesign.PLUS_MIDNIGHT_SKY) }
 
 
     }

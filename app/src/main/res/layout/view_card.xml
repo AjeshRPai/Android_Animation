@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.example.ajeshpai.androidanimatios.ShufflingCardView.CardView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="140dp"
+    android:layout_gravity="bottom"
+    android:layout_marginBottom="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     xmlns:android="http://schemas.android.com/apk/res/android"/>
