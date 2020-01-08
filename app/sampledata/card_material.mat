@@ -1,0 +1,43 @@
+material {
+    name : "Card material",
+    parameters : [
+        {
+           type : sampler2d,
+           name : baseColorMap
+        },
+        {
+            type : sampler2d,
+            name : normalMap
+        },
+        {
+            type : sampler2d,
+            name : roughnessMap
+        },
+        {
+            type : sampler2d,
+            name : metallicMap
+        },
+        {
+           type : sampler2d,
+           name : reflectanceMap
+        }
+    ],
+    requires : [
+        uv0
+    ],
+    shadingModel : lit,
+}
+
+fragment {
+    void material(inout MaterialInputs material) {
+        vec3 normal = texture(materialParams_normalMap, getUV0()).xyz;
+        material.normal = normal * 2.0 - 1.0; //bump mapping
+
+        prepareMaterial(material);
+
+        material.baseColor = texture(materialParams_baseColorMap, getUV0());
+        material.roughness = texture(materialParams_roughnessMap, getUV0()).r;
+        material.metallic = texture(materialParams_metallicMap, getUV0()).r;
+        material.reflectance = texture(materialParams_reflectanceMap, getUV0()).r;
+    }
+}
