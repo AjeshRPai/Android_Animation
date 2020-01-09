@@ -1,11 +1,12 @@
 package com.example.ajeshpai.androidanimatios.cardSelectionSceneform
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.GestureDetector
 import android.view.MotionEvent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.FlingAnimation
 import androidx.dynamicanimation.animation.FloatPropertyCompat
@@ -13,6 +14,7 @@ import com.example.ajeshpai.androidanimatios.R
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
+import com.google.ar.sceneform.rendering.Material
 import com.google.ar.sceneform.rendering.ModelRenderable
 import com.google.ar.sceneform.rendering.Texture
 import kotlinx.android.synthetic.main.activity_card_selection.*
@@ -20,24 +22,32 @@ import java.lang.Math.*
 
 class CardSelectionActivity : AppCompatActivity() {
 
+
+    @SuppressLint("NewApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_card_selection)
 
-        ModelRenderable.builder()
-                .setSource(context, Uri.parse(MODEL_SFB_PATH))
+        val cardTextures =   loadTexture("card_material.mat", Texture.Usage.COLOR).build().get()
+
+         ModelRenderable.builder()
+                .setSource(this@CardSelectionActivity, Uri.parse("card_material.mat"))
                 .build()
                 .thenApply { model ->
-                    cardTextures.forEach { result -> model.material.setTexture(result.name, result.texture) }
-                }
+                     model.material.setTexture("card_material", cardTextures) }.
+
+        addCardToScene(renderable)
+
+
+
     }
 
     internal fun Context.loadTexture(
-            sourceUri: Uri,
+            source:String,
             usage: Texture.Usage
     ): Texture.Builder =
             Texture.builder()
-                    .setSource(this, Uri.parse(sourceUri))
+                    .setSource(this, Uri.parse(source))
                     .setUsage(usage)
                     .setSampler(
                             Texture.Sampler.builder()
@@ -47,16 +57,27 @@ class CardSelectionActivity : AppCompatActivity() {
                     )
 
 
-    private val CAMERA_FOCAL_LENGTH: Float
-    private val CAMERA_SCALE_HEIGHT: Float
+    private val CARD_STARTING_Y_AXIS_ANGLE: Float = 1.0f
+    private val MODEL_SFB_PATH: Int = R.raw.card_material
+    private val CARD_POSITION_X_AXIS: Float =  1.0f
+    private val CARD_POSITION_Y_AXIS: Float  = 1.0f
+    private val CARD_POSITION_Z_AXIS: Float = 1.0f
+    private val CAMERA_POSITION_X_AXIS: Float = 1.0f
+    private val CAMERA_POSITION_Y_AXIS: Float = 1.0f
+    private val CAMERA_POSITION_Z_AXIS: Float = 1.0f
+    private val CAMERA_FOCAL_LENGTH: Float  = 1.0f
+    private val CAMERA_SCALE_HEIGHT: Float = 1.0f
     private val CAMERA_SCALE_WIDTH: Float = 1.0f
+
     private val card3dNode = Node().apply {
         localPosition = Vector3(CARD_POSITION_X_AXIS, CARD_POSITION_Y_AXIS, CARD_POSITION_Z_AXIS)
         localRotation = getRotationQuaternion(CARD_STARTING_Y_AXIS_ANGLE.toFloat())
         name = CARD_ID
     }
 
-    fun addCardToScene(modelRenderable: ModelRenderable, currentCard: CardRender) {
+    data class CardRender(val material: Material)
+
+    fun addCardToScene(modelRenderable: ModelRenderable) {
         modelRenderable.material = currentCard.value
         with(card3dNode) {
             setParent(sceneView.scene)
@@ -75,17 +96,20 @@ class CardSelectionActivity : AppCompatActivity() {
         }
     }
 
+    private var lastDeltaYAxisAngle = 1.0f
+    private var screenDensity = 1.0f
+
     private val quaternion = Quaternion()
     private val rotateVector = Vector3.up()
     private fun getRotationQuaternion(deltaYAxisAngle: Float): Quaternion {
         lastDeltaYAxisAngle = deltaYAxisAngle
         return quaternion.apply {
-            val arc = toRadians(deltaYAxisAngle)
+            val arc = toRadians(deltaYAxisAngle.toDouble())
             val axis = sin(arc / 2.0)
-            x = rotateVector.x * axis
-            y = rotateVector.y * axis
-            z = rotateVector.z * axis
-            w = cos(arc / 2.0)
+            x = rotateVector.x * axis.toFloat()
+            y = rotateVector.y * axis.toFloat()
+            z = rotateVector.z * axis.toFloat()
+            w = cos(arc / 2.0).toFloat()
             normalize()
         }
     }
@@ -122,8 +146,6 @@ class CardSelectionActivity : AppCompatActivity() {
             }
             return true
         }
-
-
     }
 
     private fun startAnimation(velocity: Float) {
