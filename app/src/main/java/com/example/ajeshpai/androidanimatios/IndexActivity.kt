@@ -2,6 +2,7 @@ package com.example.ajeshpai.androidanimatios
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.ajeshpai.androidanimatios.MotionLayout.MotionLayoutSample
 import com.example.ajeshpai.androidanimatios.PathAnimations.PolygonPathAnimation
 import com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations.IndexPhysicsBasedActivity
 import com.example.ajeshpai.androidanimatios.ShufflingCardView.ShufflingCardsActivity
@@ -25,5 +26,7 @@ class IndexActivity : AppCompatActivity() {
         button7.setOnClickListener { startActivity<PolygonPathAnimation>() }
 
         button8.setOnClickListener { startActivity<ShufflingCardsActivity>() }
+
+        button9.setOnClickListener { startActivity<MotionLayoutSample>() }
     }
 }

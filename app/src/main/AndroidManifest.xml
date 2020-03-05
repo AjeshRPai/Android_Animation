@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning,InnerclassSeparator">
-        <activity android:name=".cardSelectionSceneform.CardSelectionActivity"></activity>
+        <activity android:name=".MotionLayout.MotionLayoutSample"></activity>
+        <activity android:name=".cardSelectionSceneform.CardSelectionActivity" />
         <activity android:name=".ShufflingCardView.ShufflingCardsActivity" />
         <activity android:name=".PathAnimations.PolygonPathAnimation" />
         <activity android:name=".WaveAnimation.WaveAnimationActivity" />
