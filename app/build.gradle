@@ -21,7 +21,7 @@ android {
     }
 }
 
-sceneform.asset('sampledata/models/card_material.mat','src/main/res/raw/card_material.mat')
+/*sceneform.asset('sampledata/models/card_material.mat', 'src/main/res/raw/card_material.mat')*/
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
