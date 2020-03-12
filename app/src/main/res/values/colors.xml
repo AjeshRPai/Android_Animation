@@ -12,4 +12,5 @@
 
 
     <color name="card_yellow">#FBC02D</color>
+    <color name="contentBackground">#ee2ee2</color>
 </resources>

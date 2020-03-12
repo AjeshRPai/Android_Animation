@@ -15,4 +15,9 @@
         <item name="waveGap">16dp</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">#000</item>
+        <item name="android:textColorSecondary">#e5e5e5</item>
+    </style>
+
 </resources>

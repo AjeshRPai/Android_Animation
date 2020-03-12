@@ -3,6 +3,7 @@ package com.example.ajeshpai.androidanimatios
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.ajeshpai.androidanimatios.MotionLayout.MotionLayoutSample
+import com.example.ajeshpai.androidanimatios.MotionLayout.MotionlayoutSample2
 import com.example.ajeshpai.androidanimatios.PathAnimations.PolygonPathAnimation
 import com.example.ajeshpai.androidanimatios.PhysicsBasedAnimations.IndexPhysicsBasedActivity
 import com.example.ajeshpai.androidanimatios.ShufflingCardView.ShufflingCardsActivity
@@ -27,6 +28,6 @@ class IndexActivity : AppCompatActivity() {
 
         button8.setOnClickListener { startActivity<ShufflingCardsActivity>() }
 
-        button9.setOnClickListener { startActivity<MotionLayoutSample>() }
+        button9.setOnClickListener { startActivity<MotionlayoutSample2>() }
     }
 }
